@@ -1,0 +1,135 @@
+# server : Discovery
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eureka-server
+  namespace: default
+  labels:
+    app: eureka-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eureka-server
+  template:
+    metadata:
+      labels:
+        app: eureka-server
+    spec:
+      containers:
+      - name: eureka-server
+        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:DiscoveryService41
+        ports:
+        - containerPort: 8761
+---    
+# client : Api Gateway
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apigateway
+  namespace: default
+  labels:
+    app: apigateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apigateway
+  template:
+    metadata:
+      labels:
+        app: apigateway
+    spec:
+      containers:
+      - name: apigateway
+        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:ApiGateway48
+        ports:
+        - containerPort: 8000
+        env:
+        - name: EUREKA_URL
+          value: "http://eureka:admin@eureka-server:8761/eureka"
+---    
+# client : Product
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product
+  namespace: default
+  labels:
+    app: product
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product
+  template:
+    metadata:
+      labels:
+        app: product
+    spec:
+      containers:
+      - name: product
+        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:ProductService45
+        ports:
+        - containerPort: 64421
+        env:
+        - name: EUREKA_URL
+          value: "http://eureka:admin@eureka-server:8761/eureka"
+---    
+# client : Search
+
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: search
+#   namespace: default
+#   labels:
+#     app: search
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: search
+#   template:
+#     metadata:
+#       labels:
+#         app: search
+#     spec:
+#       containers:
+#       - name: search
+#         image: ###############################################
+#         ports:
+#         - containerPort: 44421
+#         env:
+#         - name: EUREKA_URL
+#           value: "http://eureka:admin@eureka-server:8761/eureka"
+---    
+# client : Order
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order
+  namespace: default
+  labels:
+    app: order
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: order
+  template:
+    metadata:
+      labels:
+        app: order
+    spec:
+      containers:
+      - name: order
+        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:OrderService47
+        ports:
+        - containerPort: 54421
+        env:
+        - name: EUREKA_URL
+          value: "http://eureka:admin@eureka-server:8761/eureka"
+
