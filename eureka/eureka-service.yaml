@@ -66,11 +66,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: redis
+  name: redissvc
   namespace: default
 spec:
   selector:
-     app: redis
+     app: redissvc
   type: ClusterIP
   ports:
   - port:  6379
