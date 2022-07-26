@@ -70,7 +70,7 @@ spec:
     spec:
       containers:
       - name: product
-        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:ProductService75
+        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:ProductService76
         ports:
         - containerPort: 64421
         env:
@@ -98,7 +98,7 @@ spec:
     spec:
       containers:
       - name: search
-        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:SearchService71
+        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:SearchService76
         ports:
         - containerPort: 44421
         env:
@@ -155,7 +155,7 @@ spec:
     spec:
       containers:
       - name: redis
-        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:OrderService75
+        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:OrderService76
         ports:
         - containerPort: 6379
         env:
