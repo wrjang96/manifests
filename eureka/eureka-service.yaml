@@ -38,7 +38,7 @@ metadata:
 spec:
   selector:
      app: product
-  type: NodePort
+  type: ClusterIP
   # type: LoadBalancer
   ports:
   - port: 64421
@@ -70,7 +70,7 @@ metadata:
 spec:
   selector:
      app: order
-  type: NodePort
+  type: ClusterIP
   # type: LoadBalancer
   ports:
   - port: 54421
