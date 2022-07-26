@@ -155,7 +155,7 @@ spec:
     spec:
       containers:
       - name: redis
-        image: redis
+        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:Redis82
         ports:
         - containerPort: 6379
         env:
