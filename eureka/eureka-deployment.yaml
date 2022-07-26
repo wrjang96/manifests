@@ -139,22 +139,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: redis
+  name: redissvc
   namespace: default
   labels:
-    app: redis
+    app: redissvc
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: redis
+      app: redissvc
   template:
     metadata:
       labels:
-        app: redis
+        app: redissvc
     spec:
       containers:
-      - name: redis
+      - name: redissvc
         image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:Redis82
         ports:
         - containerPort: 6379
