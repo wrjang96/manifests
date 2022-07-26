@@ -42,7 +42,7 @@ spec:
     spec:
       containers:
       - name: apigateway
-        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:ApiGateway73
+        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:ApiGateway74
         ports:
         - containerPort: 8000
         env:
