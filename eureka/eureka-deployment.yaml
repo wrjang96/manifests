@@ -42,7 +42,7 @@ spec:
     spec:
       containers:
       - name: apigateway
-        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:ApiGateway74
+        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:ApiGateway79
         ports:
         - containerPort: 8000
         env:
@@ -98,7 +98,7 @@ spec:
     spec:
       containers:
       - name: search
-        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:ApiGateway79
+        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:SearchService76
         ports:
         - containerPort: 44421
         env:
@@ -155,7 +155,7 @@ spec:
     spec:
       containers:
       - name: redis
-        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:OrderService76
+        image: redis
         ports:
         - containerPort: 6379
         env:
