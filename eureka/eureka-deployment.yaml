@@ -126,7 +126,7 @@ spec:
     spec:
       containers:
       - name: order
-        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:OrderService86
+        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:OrderService88
         ports:
         - containerPort: 54421
         env:
