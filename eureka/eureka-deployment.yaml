@@ -98,7 +98,7 @@ spec:
     spec:
       containers:
       - name: search
-        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:SearchService84
+        image: 661241151201.dkr.ecr.ap-northeast-2.amazonaws.com/ecr-for-1:SearchService90
         ports:
         - containerPort: 44421
         env:
